@@ -6,7 +6,7 @@ import 'package:shop/models/product.dart';
 // pra toda a arvore de componetes de nossa aplicação
 class ProductList with ChangeNotifier {
   // lista com os dados a partir de dummyProducts
-  List<Product> _items = dummyProducts;
+  final List<Product> _items = dummyProducts;
 
   //uma lista que vai "pegar" uma cópia da lista de dados de dummyProducts
   List<Product> get items => [..._items];
