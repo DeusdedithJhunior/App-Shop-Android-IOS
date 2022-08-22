@@ -11,7 +11,11 @@ class ProductGrid extends StatelessWidget {
   Widget build(BuildContext context) {
     // aqui os dados são obitos através do provider
     final provider = Provider.of<ProductList>(context);
+
+    // lista de produtos já criada dentro de dummydata, pois os dados estão sendo
+    // fornecidos via provider
     final List<Product> loadedProducts = provider.items;
+
     return GridView.builder(
       itemCount: loadedProducts.length,
       padding: const EdgeInsets.all(10),
@@ -22,8 +26,8 @@ class ProductGrid extends StatelessWidget {
         crossAxisSpacing: 10,
         mainAxisSpacing: 10,
       ),
-      itemBuilder: (ctx, i) => ChangeNotifierProvider(
-        create: (_) => loadedProducts[i],
+      itemBuilder: (ctx, i) => ChangeNotifierProvider.value(
+        value: loadedProducts[i],
         child: const ProductItem(),
       ),
     );
