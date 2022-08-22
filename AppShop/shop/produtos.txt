@@ -31,4 +31,20 @@
       imageUrl:
           'https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Cast-Iron-Pan.jpg/1024px-Cast-Iron-Pan.jpg',
     ),
+    Product(
+      id: 'p5',
+      title: 'Double bed',
+      description: 'Julia Double Bed Solid Wood Bedroom.',
+      price: 2429.10,
+      imageUrl:
+          'https://imaginemoveis.com.br/wp-content/uploads/CAMA-DE-CASAL-J%C3%9ALIA-REF-1200-1000x1000.jpg',
+    ),
+    Product(
+      id: 'p6',
+      title: 'Notebook Gamer Dell',
+      description: 'Notebook Gamer Dell G15 15-5510 Intel Core i5 10500H 15,6" 8GB SSD 256 GB Linux GeForce GTX 1650.',
+      price: 4851.00,
+      imageUrl:
+          'https://i.zst.com.br/thumbs/12/21/17/-48898188.jpg',
+    ),
   ]
