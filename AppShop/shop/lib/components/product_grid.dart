@@ -12,8 +12,8 @@ class ProductGrid extends StatelessWidget {
     // aqui os dados são obitos através do provider
     final provider = Provider.of<ProductList>(context);
 
-    // lista de produtos já criada dentro de dummydata, pois os dados estão sendo
-    // fornecidos via provider
+    // lista de produtos já criada dentro de dummydata, aqui os dados 
+    // estão sendo fornecidos via provider
     final List<Product> loadedProducts = provider.items;
 
     return GridView.builder(
