@@ -1,19 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:shop/components/products_item.dart';
-import 'package:shop/data/dummy_data.dart';
 import 'package:shop/models/product.dart';
+import 'package:shop/models/product_list.dart';
 
 // tela que irá exibir os produtos
 class ProductsOverviewPage extends StatelessWidget {
   // construtor
-  ProductsOverviewPage({Key? key}) : super(key: key);
-
-  // criando a lista de produtos que serão referenciadas a partir de dummy_data
-  final List<Product> loadedProducts = dummyProducts;
+  const ProductsOverviewPage({Key? key}) : super(key: key);
 
   // metodo build
   @override
   Widget build(BuildContext context) {
+    // aqui os dados são obitos através do provider
+    final provider = Provider.of<ProductList>(context);
+    final List<Product> loadedProducts = provider.items;
+
     return Scaffold(
       appBar: AppBar(
         title: const Center(
