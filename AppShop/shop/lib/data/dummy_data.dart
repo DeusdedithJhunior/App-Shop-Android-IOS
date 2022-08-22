@@ -1,0 +1,51 @@
+import '../models/product.dart';
+
+final dummyProducts = [
+  Product(
+    id: 'p1',
+    title: 'Red Shirt',
+    description: 'A red shirt - it is pretty red!',
+    price: 29.99,
+    imageUrl:
+        'https://cdn.pixabay.com/photo/2016/10/02/22/17/red-t-shirt-1710578_1280.jpg',
+  ),
+  Product(
+    id: 'p2',
+    title: 'Trousers',
+    description: 'A nice pair of trousers.',
+    price: 59.99,
+    imageUrl:
+        'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Trousers%2C_dress_%28AM_1960.022-8%29.jpg/512px-Trousers%2C_dress_%28AM_1960.022-8%29.jpg',
+  ),
+  Product(
+    id: 'p3',
+    title: 'Yellow Scarf',
+    description: 'Warm and cozy - exactly what you need for the winter.',
+    price: 19.99,
+    imageUrl: 'https://live.staticflickr.com/4043/4438260868_cc79b3369d_z.jpg',
+  ),
+  Product(
+    id: 'p4',
+    title: 'A Pan',
+    description: 'Prepare any meal you want.',
+    price: 49.99,
+    imageUrl:
+        'https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Cast-Iron-Pan.jpg/1024px-Cast-Iron-Pan.jpg',
+  ),
+  Product(
+    id: 'p5',
+    title: 'Double bed',
+    description: 'Julia Double Bed Solid Wood Bedroom.',
+    price: 2429.10,
+    imageUrl:
+        'https://imaginemoveis.com.br/wp-content/uploads/CAMA-DE-CASAL-J%C3%9ALIA-REF-1200-1000x1000.jpg',
+  ),
+  Product(
+    id: 'p6',
+    title: 'Notebook Gamer Dell',
+    description:
+        'Notebook Gamer Dell G15 15-5510 Intel Core i5 10500H 15,6" 8GB SSD 256 GB Linux GeForce GTX 1650.',
+    price: 4851.00,
+    imageUrl: 'https://i.zst.com.br/thumbs/12/21/17/-48898188.jpg',
+  ),
+];
