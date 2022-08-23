@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shop/components/badge.dart';
 import '../components/product_grid.dart';
 
 enum FilterOptions { favorite, all }
@@ -46,9 +47,12 @@ class _ProductsOverviewPageState extends State<ProductsOverviewPage> {
               });
             },
           ),
-          IconButton(
-            onPressed: () {},
-            icon: const Icon(Icons.shopping_cart),
+          Badge(
+            value: "2",
+            child: IconButton(
+              onPressed: () {},
+              icon: const Icon(Icons.shopping_cart),
+            ),
           ),
         ],
       ),
