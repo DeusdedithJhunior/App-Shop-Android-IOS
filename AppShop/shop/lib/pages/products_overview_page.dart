@@ -46,6 +46,10 @@ class _ProductsOverviewPageState extends State<ProductsOverviewPage> {
               });
             },
           ),
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(Icons.shopping_cart),
+          ),
         ],
       ),
       body: ProductGrid(_showFavoriteOnly),
