@@ -10,6 +10,24 @@ class CartItemWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(cartItem.name);
+    return ListTile(
+      leading: CircleAvatar(
+        backgroundColor: Theme.of(context).colorScheme.primary,
+        child: Padding(
+          padding: const EdgeInsets.all(5),
+          child: FittedBox(
+            child: Text(
+              '${cartItem.price}',
+              style: TextStyle(
+                color: Theme.of(context).primaryTextTheme.headline6?.color,
+              ),
+            ),
+          ),
+        ),
+      ),
+      title: Text(cartItem.name),
+      subtitle: Text('Total: R\$ ${cartItem.price * cartItem.price}'),
+      trailing: Text('${cartItem.quantity}x'),
+    );
   }
 }
