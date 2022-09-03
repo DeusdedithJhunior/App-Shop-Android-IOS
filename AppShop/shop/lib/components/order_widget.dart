@@ -3,21 +3,58 @@ import 'package:intl/intl.dart';
 import 'package:shop/models/order.dart';
 
 // componente que vai redenrizar cada componente da tela de pedidos
-class OrderWidget extends StatelessWidget {
+class OrderWidget extends StatefulWidget {
   final Order order;
 
   const OrderWidget({super.key, required this.order});
 
   @override
+  State<OrderWidget> createState() => _OrderWidgetState();
+}
+
+class _OrderWidgetState extends State<OrderWidget> {
+  // variavel que vai controlar o estado (expandido ou não)
+  bool _expanded = false;
+
+  @override
   Widget build(BuildContext context) {
     return Card(
-      child: ListTile(
-        title: Text('R\$ ${order.total.toStringAsFixed(2)}'),
-        subtitle: Text(DateFormat('dd/MM/yyyy hh:mm').format(order.date)),
-        trailing: IconButton(
-          onPressed: () {},
-          icon: const Icon(Icons.expand_more),
-        ),
+      child: Column(
+        children: [
+          ListTile(
+            title: Text('R\$ ${widget.order.total.toStringAsFixed(2)}'),
+            subtitle:
+                Text(DateFormat('dd/MM/yyyy hh:mm').format(widget.order.date)),
+            trailing: IconButton(
+              onPressed: () {
+                setState(() {
+                  _expanded = !_expanded;
+                });
+              },
+              icon: const Icon(Icons.expand_more),
+            ),
+          ),
+          if (_expanded)
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 4),
+              height: (widget.order.products.length * 25.0) + 10,
+              child: ListView(
+                children: widget.order.products.map((product) {
+                  return Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(product.name,
+                          style: const TextStyle(
+                              fontSize: 18, fontWeight: FontWeight.bold)),
+                      Text('${product.quantity}x R\$ ${product.price}',
+                          style: const TextStyle(
+                              fontSize: 18, color: Colors.grey)),
+                    ],
+                  );
+                }).toList(),
+              ),
+            ),
+        ],
       ),
     );
   }
