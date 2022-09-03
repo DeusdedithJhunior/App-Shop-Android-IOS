@@ -3,6 +3,8 @@ import 'package:provider/provider.dart';
 import 'package:shop/components/app_drawer.dart';
 import 'package:shop/models/order_list.dart';
 
+import '../components/order_widget.dart';
+
 class OrdersPage extends StatelessWidget {
   const OrdersPage({super.key});
 
@@ -16,7 +18,7 @@ class OrdersPage extends StatelessWidget {
       ),
       drawer: const AppDrawer(),
       body: ListView.builder(
-        itemBuilder: (ctx, i) => Text(orders.items[i].total.toString()),
+        itemBuilder: (ctx, i) => OrderWidget(order: orders.items[i]),
         itemCount: orders.itemsCount,
       ),
     );
