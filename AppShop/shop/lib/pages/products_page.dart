@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:shop/components/app_drawer.dart';
 import 'package:shop/components/product_item.dart';
 import 'package:shop/models/product_list.dart';
+import 'package:shop/utils/app_routes.dart';
 
 // tela que vai gerenciar a tela de edição de produtos
 class ProductsPage extends StatelessWidget {
@@ -15,6 +16,14 @@ class ProductsPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Gerenciar Produtos'),
+        actions: [
+          IconButton(
+            onPressed: () {
+              Navigator.of(context).pushNamed(AppRoutes.routeProductsForm);
+            },
+            icon: const Icon(Icons.add),
+          )
+        ],
       ),
       drawer: const AppDrawer(),
       body: Padding(
