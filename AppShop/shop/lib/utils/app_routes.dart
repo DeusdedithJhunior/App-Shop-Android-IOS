@@ -3,5 +3,6 @@ class AppRoutes {
   static const routeProductDetail = "/product-detail";
   static const cartPage = "/cart-page";
   static const routeOrders = "/orders";
-  static const routeProducts = "products";
+  static const routeProducts = "/products";
+  static const routeProductsForm = "/product-form";
 }
