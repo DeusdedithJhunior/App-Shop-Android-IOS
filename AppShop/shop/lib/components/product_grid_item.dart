@@ -7,9 +7,9 @@ import 'package:shop/utils/app_routes.dart';
 // aqui vai ficar as caracteristicas de como os itens irão ser
 // exibos em products overview page
 
-class ProductItem extends StatelessWidget {
+class ProductGridItem extends StatelessWidget {
   // construtor
-  const ProductItem({Key? key}) : super(key: key);
+  const ProductGridItem({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -49,6 +49,19 @@ class ProductItem extends StatelessWidget {
           ),
           trailing: IconButton(
             onPressed: () {
+              ScaffoldMessenger.of(context).hideCurrentSnackBar();
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(
+                  content: const Text('Produto adicionado com Sucesso!'),
+                  duration: const Duration(seconds: 2),
+                  action: SnackBarAction(
+                    label: 'DESFAZER',
+                    onPressed: () {
+                      cart.removeSingleItem(product.id);
+                    },
+                  ),
+                ),
+              );
               cart.addItem(product);
             },
             icon: const Icon(Icons.shopping_cart),
