@@ -11,6 +11,10 @@ class ProductList with ChangeNotifier {
   //uma lista que vai "pegar" uma cópia da lista de dados de dummyProducts
   List<Product> get items => [..._items];
 
+  int get itemsCount {
+    return _items.length;
+  }
+
   // vai filtrar a lista de produtos
   List<Product> get favoriteItems =>
       _items.where((prod) => prod.isFavorite).toList();

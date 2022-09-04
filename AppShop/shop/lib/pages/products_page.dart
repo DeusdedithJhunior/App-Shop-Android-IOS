@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:shop/components/app_drawer.dart';
+import 'package:shop/models/product_list.dart';
 
 // tela que vai gerenciar a tela de edição de produtos
 class ProductsPage extends StatelessWidget {
@@ -6,9 +9,19 @@ class ProductsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final ProductList products = Provider.of(context);
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Gerenciar Produtos'),
+      ),
+      drawer: const AppDrawer(),
+      body: Padding(
+        padding: const EdgeInsets.all(8),
+        child: ListView.builder(
+          itemBuilder: (ctx, i) => Text(products.items[i].title),
+          itemCount: products.itemsCount,
+        ),
       ),
     );
   }
