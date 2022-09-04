@@ -21,6 +21,28 @@ class Cart with ChangeNotifier {
     notifyListeners();
   }
 
+  void removeSingleItem(String productId) {
+    if (!_items.containsKey(productId)) {
+      return;
+    }
+
+    if (_items[productId]?.quantity == 1) {
+      _items.remove(productId);
+    } else {
+      _items.update(
+        productId,
+        (exitingItem) => CartItem(
+          id: exitingItem.id,
+          name: exitingItem.name,
+          productId: exitingItem.productId,
+          quantity: exitingItem.quantity - 1,
+          price: exitingItem.price,
+        ),
+      );
+    }
+    notifyListeners();
+  }
+
   // metodo que limpa a lista
   void clear() {
     _items = {};
