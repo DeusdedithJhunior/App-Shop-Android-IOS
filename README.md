@@ -11,8 +11,9 @@ Repositório de prática de estudo. Nesse aplicativo (Android e IOS) chamado "Lo
 
 ## ✔️ Aprendizado aplicado no Projeto
 
-- Navegação em múltiplas telas ;
+- Navegação em múltiplas telas;
 - Navegação usando rotas nomeadas;
+- Gerenciamento de Estado;
 - Drawer personalizado;
 - Conecção com Web Server (requisições HTTP usando Rest API);
 
